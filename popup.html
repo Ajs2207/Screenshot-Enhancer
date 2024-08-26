@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 300px; padding: 20px; font-family: Arial, sans-serif; }
+    #capturedImage { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .control { margin: 15px 0; }
+    label { display: block; margin-bottom: 5px; font-weight: bold; }
+    select, input[type="color"], input[type="range"] { width: 100%; padding: 5px; border-radius: 4px; border: 1px solid #ccc; }
+    #saveBtn { width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+    #saveBtn:hover { background-color: #45a049; }
+  </style>
+</head>
+<body>
+  <button id="captureBtn">Capture Screenshot</button>
+  <div id="editor" style="display:none;">
+    <img id="capturedImage">
+    <div class="control">
+      <label for="bgType">Background Type:</label>
+      <select id="bgType">
+        <option value="solid">Solid Color</option>
+        <option value="gradient">Gradient</option>
+      </select>
+    </div>
+    <div id="solidColorControl" class="control">
+      <label for="bgColor">Background Color:</label>
+      <input type="color" id="bgColor">
+    </div>
+    <div id="gradientControl" class="control" style="display:none;">
+      <label for="gradientType">Gradient Type:</label>
+      <select id="gradientType">
+        <option value="linear-gradient(to right, #ff9966, #ff5e62)">Sunset</option>
+        <option value="linear-gradient(to right, #00c6ff, #0072ff)">Ocean Blue</option>
+        <option value="linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4)">Mystic</option>
+        <option value="linear-gradient(to right, #654ea3, #eaafc8)">Lavender</option>
+      </select>
+    </div>
+    <div class="control">
+      <label for="padding">Padding:</label>
+      <input type="range" id="padding" min="0" max="50" value="0">
+      <span id="paddingValue">0px</span>
+    </div>
+    <button id="saveBtn">Save Image</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
